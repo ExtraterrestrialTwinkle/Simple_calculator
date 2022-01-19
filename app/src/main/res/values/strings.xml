@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="off">OFF</string>
+    <string name="clear">CLEAR</string>
+    <string name="left_arrow">&#8592;</string>
+    <string name="del">DEL</string>
+</resources>

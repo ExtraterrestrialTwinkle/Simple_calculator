@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="8dp"
+    android:background="?attr/colorOnPrimary"
+    tools:context=".CalculatorFragment">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="1"
+        android:orientation="vertical"
+        android:id="@+id/editFieldContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/buttonsContainer">
+
+        <TextView
+            android:id="@+id/editField"
+            android:layout_width="match_parent"
+            style="?attr/textAppearanceHeadline5"
+            android:gravity="top|start"
+            tools:text="12345"
+            android:maxLines="4"
+            android:layout_height="0dp"
+            android:layout_weight="2" />
+
+        <TextView
+            android:id="@+id/resultTextField"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="end|center"
+            style="?attr/textAppearanceHeadline4"
+            tools:text="12345"
+            android:maxLength="16"/>
+
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="1"
+        android:id="@+id/buttonsContainer"
+        app:layout_constraintTop_toBottomOf="@id/editFieldContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TableRow
+            android:id="@+id/zeroRow"
+            android:layout_weight="1">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="10dp"
+                android:backgroundTint="?attr/colorPrimaryVariant">
+
+                <TextView
+                    android:id="@+id/offButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/off"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    style="?attr/textAppearanceHeadline4"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="match_parent"
+                android:backgroundTint="@android:color/transparent"
+                android:background="?attr/colorPrimaryVariant">
+
+            </FrameLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="10dp"
+                android:backgroundTint="@android:color/transparent"
+                android:background="?attr/colorPrimaryVariant">
+
+                <TextView
+                    android:id="@+id/clear"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/clear"
+                    style="?attr/textAppearanceHeadline4"
+                    />
+            </androidx.cardview.widget.CardView>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/firstRow"
+            android:layout_weight="1">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:backgroundTint="@android:color/transparent"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:id="@+id/seven"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="7"
+                    style="?attr/textAppearanceHeadline4"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:backgroundTint="@android:color/transparent"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:id="@+id/eight"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="8"
+                    style="?attr/textAppearanceHeadline4"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:backgroundTint="@android:color/transparent"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:id="@+id/nine"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="9"
+                    style="?attr/textAppearanceHeadline4"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:backgroundTint="@android:color/transparent"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:id="@+id/percent"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="%"
+                    style="?attr/textAppearanceHeadline4"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="10dp"
+                android:backgroundTint="@android:color/transparent"
+                android:background="?attr/colorPrimaryVariant">
+
+                <TextView
+                    android:id="@+id/delete"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/left_arrow"
+                    style="?attr/textAppearanceHeadline4"
+                    />
+            </androidx.cardview.widget.CardView>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/secondRow"
+            android:layout_weight="1">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:backgroundTint="@android:color/transparent"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:id="@+id/four"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="4"
+                    style="?attr/textAppearanceHeadline4"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:backgroundTint="@android:color/transparent"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:id="@+id/five"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="5"
+                    style="?attr/textAppearanceHeadline4"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:backgroundTint="@android:color/transparent"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:id="@+id/six"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="6"
+                    style="?attr/textAppearanceHeadline4"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:backgroundTint="@android:color/transparent"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:id="@+id/multiply"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="x"
+                    style="?attr/textAppearanceHeadline4"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:backgroundTint="@android:color/transparent"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:id="@+id/divide"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text=":"
+                    style="?attr/textAppearanceHeadline4"
+                    />
+            </androidx.cardview.widget.CardView>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/thirdRow"
+            android:layout_weight="1">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:backgroundTint="@android:color/transparent"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:id="@+id/one"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="1"
+                    style="?attr/textAppearanceHeadline4"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:backgroundTint="@android:color/transparent"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:id="@+id/two"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="2"
+                    style="?attr/textAppearanceHeadline4"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:backgroundTint="@android:color/transparent"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:id="@+id/three"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="3"
+                    style="?attr/textAppearanceHeadline4"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:backgroundTint="@android:color/transparent"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:id="@+id/plus"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="+"
+                    style="?attr/textAppearanceHeadline4"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:backgroundTint="@android:color/transparent"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:id="@+id/minus"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="-"
+                    style="?attr/textAppearanceHeadline4"
+                    />
+            </androidx.cardview.widget.CardView>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/fourthRow"
+            android:layout_weight="1">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="10dp"
+                android:backgroundTint="@android:color/transparent"
+                android:background="?attr/colorPrimaryVariant">
+
+                <TextView
+                    android:id="@+id/negativeButton"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="+/-"
+                    style="?attr/textAppearanceHeadline4"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:backgroundTint="@android:color/transparent"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:id="@+id/zero"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="0"
+                    style="?attr/textAppearanceHeadline4"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:backgroundTint="@android:color/transparent"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:id="@+id/dot"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="."
+                    style="?attr/textAppearanceHeadline4"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="match_parent"
+                android:backgroundTint="?attr/colorPrimaryVariant"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:id="@+id/equals"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="="
+                    android:textColor="@color/white"
+                    style="?attr/textAppearanceHeadline4"
+                    />
+            </androidx.cardview.widget.CardView>
+
+        </TableRow>
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
